@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Calculadora {
     private String postfix;
     private int precedence(char c) {
@@ -12,9 +14,8 @@ public class Calculadora {
                 return -1;
         }
     }
-    public void infixapostfix(String infix, Implementacion<Character> imp){
+    public String infixapostfix(String infix, Implementacion<Character> imp){
         StringBuilder postfix1 = new StringBuilder();
-        //Stack<Character> stack = new Stack<>();
 
         for (int i = 0; i < infix.length(); i++) {
             char c = infix.charAt(i);
@@ -42,7 +43,7 @@ public class Calculadora {
         }
 
         postfix=postfix1.toString();
-        
+        return postfix;
 
     }
     public int evaluar(Implementacion<Integer> imp){
@@ -62,7 +63,7 @@ public class Calculadora {
                 else if(c == '-'){
                 a = imp.pull();
                 b = imp.pull();
-                imp.push(a-b);
+                imp.push(b-a);
                 }
                 else if(c == '*'){
                 a = imp.pull();

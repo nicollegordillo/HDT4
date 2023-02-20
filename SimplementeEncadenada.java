@@ -1,6 +1,6 @@
 import java.util.NoSuchElementException;
 
-public class SimplementeEncadenada <T> extends createList<T>{
+public class SimplementeEncadenada<T> extends createList<T>{
    
     private Node<T> head;
     private int size;
@@ -31,11 +31,7 @@ public class SimplementeEncadenada <T> extends createList<T>{
         if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException();
         }
-        Node<T> current = head;
-        for (int i = 0; i < index; i++) {
-            current = current.next;
-        }
-        return current.item;
+        return head.item;
     }
     @Override
     public int size() {

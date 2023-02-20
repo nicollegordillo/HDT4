@@ -51,8 +51,9 @@ public class Principal {
     
                 }
                 for(int i=0; i<items.size();i++){
-                    calc.infixapostfix(items.get(i),imp.Instanciar(tipo, tipo2));
-                    System.out.println(items.get(i)+" = "+calc.evaluar(imp.Instanciar(tipo, tipo2)));
+                    System.out.println("infix: "+items.get(i));
+                    System.out.println("Postfix: "+calc.infixapostfix(items.get(i),imp.Instanciar(tipo, tipo2)));
+                    System.out.println("Resultado: "+calc.evaluar(imp.Instanciar(tipo, tipo2)));
     
                 }
 
