@@ -1,7 +1,20 @@
-import java.util.ArrayList;
+
 
 public class Calculadora {
     private String postfix;
+    private static Calculadora instance = null;
+
+    private Calculadora(){
+        
+    }
+
+    // Devuelve la instancia singleton de la clase Calculadora
+    public static Calculadora getInstance() {
+        if (instance == null) {
+            instance = new Calculadora();
+        }
+        return instance;
+    }
     private int precedence(char c) {
         switch (c) {
             case '+':

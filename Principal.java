@@ -12,7 +12,7 @@ public class Principal {
         lectura l= new lectura();
         ArrayList<String> items= new ArrayList<>();
         items=l.lectura();
-        Calculadora calc= new Calculadora();
+        Calculadora calc= Calculadora.getInstance();
         ImplementacionInstance imp= new ImplementacionInstance();
         //System.out.println(l.lectura().toString());
         while(continuar){
