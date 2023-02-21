@@ -1,5 +1,12 @@
 
-
+//
+//
+//  @ Project : HDT4
+//  @ File Name : Calculadora.java
+//  @ Date : 21/02/2023
+//  @ Author : Nicolle Gordillo  
+//
+//
 public class Calculadora {
     private String postfix;
     private static Calculadora instance = null;
@@ -8,6 +15,11 @@ public class Calculadora {
         
     }
 
+    
+    /** 
+     * @return instance
+     * Es estatico para que no necesite instanciarse afuera
+     */
     // Devuelve la instancia singleton de la clase Calculadora
     public static Calculadora getInstance() {
         if (instance == null) {
@@ -15,6 +27,13 @@ public class Calculadora {
         }
         return instance;
     }
+    /**
+     * 
+     * @param c
+     * @return int
+     * Devuelve la precedencia de los simbolos +,-,* y /
+     * Private para que no haya acceso desde afuera
+     */
     private int precedence(char c) {
         switch (c) {
             case '+':
@@ -27,6 +46,15 @@ public class Calculadora {
                 return -1;
         }
     }
+    
+    /**
+     * 
+     * @param infix
+     * @param imp
+     * @return String
+     * 
+     * Conviente de infix a postfix
+     */
     public String infixapostfix(String infix, Implementacion<Character> imp){
         StringBuilder postfix1 = new StringBuilder();
 
@@ -59,6 +87,13 @@ public class Calculadora {
         return postfix;
 
     }
+    
+    /**
+     * 
+     * @param imp
+     * @return int
+     * Evalua la expresión postfix
+     */
     public int evaluar(Implementacion<Integer> imp){
         for(int i=0; i<postfix.length(); i++){
             char c = postfix.charAt(i);
@@ -86,7 +121,7 @@ public class Calculadora {
                 else if(c == '/'){
                 a = imp.pull();
                 b = imp.pull();
-                imp.push(a/b);
+                imp.push(b/a);
                 }
         }
         return imp.pull();

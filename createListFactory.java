@@ -1,4 +1,17 @@
+//
+//
+//  @ Project : HDT4
+//  @ File Name : createListFactory.java
+//  @ Date : 21/02/2023
+//  @ Author : Nicolle Gordillo  
+//
+//
 public class createListFactory {
+    
+    /** 
+     * @param tipo
+     * @return createList
+     */
     public createList Instanciar(int tipo){
         createList lista;
         switch(tipo){

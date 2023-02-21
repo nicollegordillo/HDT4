@@ -1,6 +1,13 @@
 import java.util.ArrayList;
 import java.util.Scanner;
-
+//
+//
+//  @ Project : HDT4
+//  @ File Name : Principal.java
+//  @ Date : 21/02/2023
+//  @ Author : Nicolle Gordillo  
+//
+//
 public class Principal {
     public static void main(String[] args) throws Exception {
         Boolean continuar=true;
@@ -14,7 +21,6 @@ public class Principal {
         items=l.lectura();
         Calculadora calc= Calculadora.getInstance();
         ImplementacionInstance imp= new ImplementacionInstance();
-        //System.out.println(l.lectura().toString());
         while(continuar){
             op1=0;
             System.out.println("Bienvenido al programa de infix a postfix");
